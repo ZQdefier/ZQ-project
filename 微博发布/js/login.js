@@ -49,12 +49,14 @@ class Login {
 		var user = this.box.querySelector("#username").value;
 		var txt = this.box.querySelector("#password").value;
 		console.log(user,txt);
-		document.body.innerHTML = txt;
+		this.mod.remove();
+		this.box.style.display = "none";
+		var p = document.createElement("p")
+		p.innerHTML += txt;
+		document.body.appendChild(p);
 		var fbtime = new Date();
 		this.fbtime = fbtime.getTime();
 		console.log(this.fbtime)
-		this.mod.remove();
-		this.box.style.display = "none";
 	}
 	chehui(){
 		var _this = this;
